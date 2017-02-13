@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Quicksand');
+@import url('https://fonts.googleapis.com/css?family=Josefin-Sans');
+@import url('https://fonts.googleapis.com/css?family=Alegreya-Sans-SC');
 
 html, body {
 	/*font-family: Quicksand;*/
@@ -9,21 +11,25 @@ html, body {
 }
 
 h1 {
+	font-family: Josefin-Sans;
 	font-size: 35px;
 }
 
 p {
+	font-family: Quicksand;
 	max-width: 65%;
 	min-width: 500px;
 }
 
 h2 {
+	font-family: Quicksand;
 	/*text-align: center;*/
-	font-size: 2.6rem;
+	font-size: 30px;
 }
 
 h3 {
-	font-size: 2.3rem;
+	font-family: Alegreya-Sans-SC;
+	font-size: 25px;
 }
 
 div {
