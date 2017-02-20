@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<title>W3.CSS Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="/lib/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Quicksand">
+<style>
+body,h1,h2{font-family: "Quicksand", sans-serif}
+body, html {height: 100%}
+p {line-height: 2}
+.bgimg, .bgimg2 {
+    min-height: 100%;
+    background-position: center;
+    background-size: cover;
+}
+.bgimg {background-image: url("/images/IMG_0135.jpg")}
+
+</style>
+<body>
+
+<!-- Header / Home-->
+<header class="w3-display-container w3-wide bgimg w3-grayscale-min" id="home">
+  <div class="w3-display-middle w3-text-white w3-center">
+    <h1 class="w3-jumbo">Baxter</h1>
+    <h1>Feeding Bot</h1>
+    <h2><b>CMU 16-264 Humanoids</b></h2>
+    <h3>Lingdong H, Kearnie L, Vicki L, Tatyana M</h3>
+  </div>
+</header>
+
+<!-- Navbar (sticky bottom) -->
+<div class="w3-bottom w3-hide-small">
+  <ul class="w3-navbar w3-white w3-center w3-padding-8 w3-opacity-min w3-hover-opacity-off">
+    <li style="width:25%"><a href="#home" class="w3-margin-left w3-round">Home</a></li>
+    <li style="width:25%"><a href="#about" class="w3-round">About</a></li>
+    <li style="width:25%"><a href="#plan" class="w3-round">Plan</a></li>
+    <li style="width:25%"><a href="#timeline" class="w3-margin-right w3-round w3-hover-black">Timeline</a></li>
+  </ul>
+</div>
+
+<!-- About / Members and Motivation -->
+<div class="w3-container w3-padding-64 w3-white w3-grayscale-min" id="about">
+  <div class="w3-content">
+    <h1 class="w3-center w3-text-grey"><b>Motivation, Purpose, Idea</b></h1>
+    <img class="w3-round w3-grayscale-min" src="/w3images/wedding_couple2.jpg" style="width:100%;margin:32px 0">
+    <p>
+    <b>Team Members:</b> <i>Lingdong Huang, Kearnie Lin, Vicki Long, Tatyana Mustakos</i> <br><br>
+    
+    Our group decided to experiment with robot feeding, particularly in controlling Baxter to recognize facial features and to subsequently move food to a subject's mouth. This project would be a combination of working with the robot arm, computer vision/facial recognition, and robot learning.<br><br>
+
+We decided on this theme as an experimental approach between fun and utility; whereas ideally the project could be used to feed a lazy person who refuses to move, it could also be introduced as a more legitimate device to feed the disabled or similarly impaired patients who would normally have trouble eating.<br><br>
+
+Being a project which poses an explicit goal of being able to control the robot arm to a target direction (location of food, subject's mouth, etc.), we plan to approach our tasks in simple, smaller tasks and gradually increase the difficulty and variety (i.e. food and utensil variability) over time with each ideal success.
+    </p><br>
+  </div>
+</div>
+
+<!-- Background photo -->
+<div class="w3-display-container bgimg2">
+  <div class="w3-display-middle w3-text-white w3-center">
+    <h1 class="w3-jumbo">You Are Invited</h1><br>
+    <h2>Of course..</h2>
+  </div>
+</div>
+
+<!-- Plan -->
+<div class="w3-container w3-padding-64 w3-white w3-grayscale-min w3-left" id="plan">
+  <div class="w3-content">
+    <h1 class="w3-text-grey"><b>Plan</b></h1>
+    <p><b>Timeline:</b> Our premise is to start with basic tasks and increment our goals over time once we achieve smaller benchmarks.<br>
+
+Our thought process has been as follows:
+           <ul>
+               <li>Control movement of robot arm</li>
+               <li>Move cup of liquid from source location to subject's mouth</li>
+               <li>Optimize grip of robot hand with certain utensils</li>
+               <li>Move utensils in hand to target location</li>
+               <li>Incorporate scooping/spooning action (for cereal)</li>
+               <li>Move test food 1 to subject's mouth (cereal)</li>
+               <li>Integrate facial recognition (FaceOSC, Kinect?)</li>
+               <li>Ensure robot can track and recognize subject's mouth (when open?)</li>
+               <li>Eventually, expand variety of utensils and food types for further tests, once the base aspect of movement, grip, and identifying target is satisfactory</li>
+               <li>Possibly incorporate sound input recognition in addition to open mouth ("Ahhhh") to prompt robot to recognize that subject is in need of food</li>
+               <li>Have robot help subject chew food/wipe subject's mouth after</li>
+           </ul>
+           
+                      <b>Sub-problems:</b><br>
+           Computer Vision
+           <ul>
+               <li>Finding position and width of mouth</li>
+               <li>Locating food container</li>
+               <li>Figuring out how much food is remaining in container/spoon</li>
+           </ul>
+           Scooping/Picking up food particles from container
+           <ul>
+               <li>Adjusting force and angle according to food type</li>
+           </ul>
+           Movement/Transfer food from container to mouth
+           <ul>
+               <li>Path planning (avoiding obstacles, predict human movement)</li>
+               <li>Maintaining steady hand</li>
+           </ul>
+           Feeding
+           <ul>
+               <li>Figuring out when to move forward into mouth and retract</li>
+               <li>Slight movement to discard food into mouth</li>
+               <li>Gentle movement/safety measures</li>
+           </ul>
+           Additional features
+           <ul>
+               <li>Chewing assistance</li>
+               <li>Mouth wiping</li>
+           </ul>
+           Extra planning
+           <ul>
+               <li>Decide diet based on subject health condition</li>
+               <li>Feed based on time of day or hunger level</li>
+           </ul>
+    </p>
+  </div>
+</div>
+
+<!-- Timeline -->
+<div class="w3-container w3-padding-64 w3-white w3-left w3-wide" id="timeline">
+    <p>
+  <h2>Timeline</h2>
+  <h2><b>Week 1</b></h2>Introduction and learning Baxter program, test trial of Baxter simulator, basic template of project website
+
+<h2><b>Week 2</b></h2> Completed first test script for successfully moving arm to cup at source location, grabbing and picking up the cup with grippers, and moving to target location
+    
+    </p>
+</div>
+
+
+
+<div class="w3-hide-small" style="margin-bottom:32px"> </div>
+
+</body>
+</html>
