@@ -1,108 +1,122 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title>Feeding Bot</title>
-	<meta charset="utf-8"/>
-	<link rel="stylesheet" type="text/css" href="main.css">
-</head>
-<body>
+  <head>
+    <title>Feeding Bot</title>
+    <meta charset="utf-8"/>
+    <link rel="stylesheet" type="text/css" href="main.css">
+  </head>
+  <body>
 
-	<h1>Baxter: Feeding Bot</h1>
-	<h2>Carnegie Mellon University <br> 16-264 Humanoids (Spring 2017)</h2>
-	<p>****Site under construction****</p>
+    <h1>Baxter: Feeding Bot</h1>
+    <h2>Carnegie Mellon University <br> 16-264 Humanoids (Spring 2017)</h2>
+    <p>****Site under construction****</p>
 
-<img src = "https://raw.githubusercontent.com/kearnie/kearnie.github.io/master/images/IMG_0135.JPG" width="925">
+    <img alt="image of Baxter's arm" src="https://raw.githubusercontent.com/kearnie/kearnie.github.io/master/images/IMG_0135.JPG">
 
-	<h3>Team members</h3> 
-	<p>Lingdong Huang, Kearnie Lin, Vicki Long, Tatyana Mustakos</p>
-	<h3>Motivation, Purpose, Idea</h3> 
-	<p>Our group decided to experiment with robot feeding, particularly in controlling Baxter to recognize facial features and to subsequently move food to a subject's mouth. This project would be a combination of working with the robot arm, computer vision/facial recognition, and robot learning.</p> 
-	<p>We decided on this theme as an experimental approach between fun and utility; whereas ideally the project could be used to feed a lazy person who refuses to move, it could also be introduced as a more legitimate device to feed the disabled or similarly impaired patients who would normally have trouble eating.</p>
-	<p>Being a project which poses an explicit goal of being able to control the robot arm to a target direction (location of food, subject's mouth, etc.), we plan to approach our tasks in simple, smaller tasks and gradually increase the difficulty and variety (i.e. food and utensil variability) over time with each ideal success.</p>
-	
-	<h3>Progress so far</h3>
-	<p><a href="https://docs.google.com/a/andrew.cmu.edu/presentation/d/1tOM1_1_tID0Nz_HkzVs9fs2G9SY8WkMiO68nKPTEZws/edit?usp=sharing">Powerpoint</a></p>
-	<p>use @andrew.edu email to be able to view</p>	
-	<h3>Plan</h3>
-	<p>Timeline: Our premise is to start with basic tasks and increment our goals over time once we achieve smaller benchmarks.</p>
-	<p> Our thought process has been as follows:
-	<div class="list">
-           <ul>
-               <li>Control movement of robot arm</li>
-               <li>Move cup of liquid from source location to subject's mouth</li>
-               <li>Optimize grip of robot hand with certain utensils</li>
-               <li>Move utensils in hand to target location</li>
-               <li>Incorporate scooping/spooning action (for cereal)</li>
-               <li>Move test food 1 to subject's mouth (cereal)</li>
-               <li>Integrate facial recognition (FaceOSC, Kinect?)</li>
-               <li>Ensure robot can track and recognize subject's mouth (when open?)</li>
-               <li>Eventually, expand variety of utensils and food types for further tests, once the base aspect of movement, grip, and identifying target is satisfactory</li>
-               <li>Possibly incorporate sound input recognition in addition to open mouth ("Ahhhh") to prompt robot to recognize that subject is in need of food</li>
-               <li>Have robot help subject chew food/wipe subject's mouth after</li>
-           </ul>
-           </div>
-           <p>Sub-problems:</p>
-           <p>Computer Vision</p>
-           <ul>
-               <li>Finding position and width of mouth</li>
-               <li>Locating food container</li>
-               <li>Figuring out how much food is remaining in container/spoon</li>
-           </ul>
-           <p>Scooping/Picking up food particles from container</p>
-           <ul>
-               <li>Adjusting force and angle according to food type</li>
-           </ul>
-           <p>Movement/Transfer food from container to mouth</p>
-           <ul>
-               <li>Path planning (avoiding obstacles, predict human movement)</li>
-               <li>Maintaining steady hand</li>
-           </ul>
-           <p>Feeding</p>
-           <ul>
-               <li>Figuring out when to move forward into mouth and retract</li>
-               <li>Slight movement to discard food into mouth</li>
-               <li>Gentle movement/safety measures</li>
-           </ul>
-           <p>Additional features</p>
-           <ul>
-               <li>Chewing assistance</li>
-               <li>Mouth wiping</li>
-           </ul>
-           <p>Extra planning</p>
-           <ul>
-               <li>Decide diet based on subject health condition</li>
-               <li>Feed based on time of day or hunger level</li>
-           </ul>
-           <h3>Schedule</h3>
-           <p>Week 1: Introduction and learning Baxter program, test trial of Baxter simulator, basic template of project website</p>
-           <p>Week 2: Completed first test script for successfully moving arm to cup at source location, grabbing and picking up the cup with grippers, and moving to target location</p>
-           <p>Week 3: Expanded cup script to return arm to original location and to pick up designated cup from any location, changed wrist angle of arm to grab and hold cup from 
-           the side to allow for subject straw access of practical feeding (involved three movements: moving to in front of the cup, moving forward to encapsulate cup, gripping cup),
-           started testing for holding utensils with the gripper, as simulated with a wooden stick; the stick was positioned atop the cup horizontally with the "handle" hanging off the
-           cup rim: current script allows arm to move to the handle, grip the stick, and carry it target destination</p>
-		<p>Week 4: Introduction to OpenCV, initial testing of facial recognition to succeed at recognizing facial landmarks from local laptop camera, and recognizing test bowl
-			with applied patterns to strengthen object recognition</p>
-		<p>Week 5: Continued working with OpenCV to optimize cup recognition amongst any camera scene through explicit RBG, explored other facial recognition options and 
-			acknowledged dlib and other object recognition libraries as possible workflows and toolkits</p>
-		<p>Week 6: Integrated OpenCV cup recognition to Baxter's wrist camera with visual output on lab computer to explicitly show the entire cup object being detected, considered
-			changing RGB options to HSV, plus other optimizations; started integrating Baxter's response in robot arm movement in relation to the cup detection</p>
-		<p>Week 7: Continued working with object recognition on cup with moving the robot arm: created script that allowed for user confirmation of movement direction correctness
-			when the wrist camera detects the cup, and subsequently resumed testing with Baxter's perspective of moving right, left, forward, and back when necessary</p>
-		<p>Week 8: Debugging and refinement of Baxter's movement in relation to the cup, editing the necessary angles and trigonometry-related problems with the arm angles in relation
-			to the robot's main body, fully integrated HSV recognition with other edits to improve overall cup detection, explicitly altered arm movment to steer around the cup
-			accordingly and not knock it over, integrated gripper control to grab the cup once the arm has successfully moved in range of the cup</p>
+    <h3>Team members</h3> 
+    <p>Lingdong Huang, Kearnie Lin, Vicki Long, Tatyana Mustakos</p>
+    <h3>Motivation, Purpose, Idea</h3> 
+    <p>Our group decided to experiment with robot feeding, particularly in controlling Baxter to recognize facial features and to subsequently move food to a subject's mouth. This project would be a combination of working with the robot arm, computer vision/facial recognition, and robot learning.</p> 
+    <p>We decided on this theme as an experimental approach between fun and utility; whereas ideally the project could be used to feed a lazy person who refuses to move, it could also be introduced as a more legitimate device to feed the disabled or similarly impaired patients who would normally have trouble eating.</p>
+    <p>Being a project which poses an explicit goal of being able to control the robot arm to a target direction (location of food, subject's mouth, etc.), we plan to approach our tasks in simple, smaller tasks and gradually increase the difficulty and variety (i.e. food and utensil variability) over time with each ideal success.</p>
 
-           <h3>Shopping List (as of 02/20/2017)</h3>
-           <p><ul>
-               <li>Utensils (spoons, forks)</li>
-               <li>Cereal (test food 1)</li>
-               <li>Bowls</li>
-               <li>Plates</li>
-               <li>Straws</li>
-               <li>Cups</li>
-               <li>Plastic wrap</li>
-               <li>Rubber bands</li>
-               <li>Paper towels</li>
-               </ul></p>
-</body>
+    <h3>Progress so far</h3>
+    <p><a href="https://docs.google.com/a/andrew.cmu.edu/presentation/d/1tOM1_1_tID0Nz_HkzVs9fs2G9SY8WkMiO68nKPTEZws/edit?usp=sharing">Powerpoint</a></p>
+    <p>use @andrew.edu email to be able to view</p>	
+    <h3>Plan</h3>
+    <p>Timeline: Our premise is to start with basic tasks and increment our goals over time once we achieve smaller benchmarks.</p>
+    <p> Our thought process has been as follows:
+    <div class="list">
+      <ul>
+        <li>Control movement of robot arm</li>
+        <li>Move cup of liquid from source location to subject's mouth</li>
+        <li>Optimize grip of robot hand with certain utensils</li>
+        <li>Move utensils in hand to target location</li>
+        <li>Incorporate scooping/spooning action (for cereal)</li>
+        <li>Move test food 1 to subject's mouth (cereal)</li>
+        <li>Integrate facial recognition (FaceOSC, Kinect?)</li>
+        <li>Ensure robot can track and recognize subject's mouth (when open?)</li>
+        <li>Eventually, expand variety of utensils and food types for further tests, once the base aspect of movement, grip, and identifying target is satisfactory</li>
+        <li>Possibly incorporate sound input recognition in addition to open mouth ("Ahhhh") to prompt robot to recognize that subject is in need of food</li>
+        <li>Have robot help subject chew food/wipe subject's mouth after</li>
+      </ul>
+    </div>
+    <p>Sub-problems:</p>
+    <p>Computer Vision</p>
+    <div class="list">
+      <ul>
+        <li>Finding position and width of mouth</li>
+        <li>Locating food container</li>
+        <li>Figuring out how much food is remaining in container/spoon</li>
+      </ul>
+    </div>
+    <p>Scooping/Picking up food particles from container</p>
+    <div class="list">
+      <ul>
+        <li>Adjusting force and angle according to food type</li>
+      </ul>
+    </div>
+    <p>Movement/Transfer food from container to mouth</p>
+    <div class="list">
+      <ul>
+        <li>Path planning (avoiding obstacles, predict human movement)</li>
+        <li>Maintaining steady hand</li>
+      </ul>
+    </div>
+    <p>Feeding</p>
+    <div class="list">
+      <ul>
+        <li>Figuring out when to move forward into mouth and retract</li>
+        <li>Slight movement to discard food into mouth</li>
+        <li>Gentle movement/safety measures</li>
+      </ul>
+    </div>
+    <p>Additional features</p>
+    <div class="list">
+      <ul>
+        <li>Chewing assistance</li>
+        <li>Mouth wiping</li>
+      </ul>
+    </div>
+    <p>Extra planning</p>
+    <div class="list">
+      <ul>
+        <li>Decide diet based on subject health condition</li>
+        <li>Feed based on time of day or hunger level</li>
+      </ul>
+    </div>
+    <h3>Schedule</h3>
+    <p>Week 1: Introduction and learning Baxter program, test trial of Baxter simulator, basic template of project website</p>
+    <p>Week 2: Completed first test script for successfully moving arm to cup at source location, grabbing and picking up the cup with grippers, and moving to target location</p>
+    <p>Week 3: Expanded cup script to return arm to original location and to pick up designated cup from any location, changed wrist angle of arm to grab and hold cup from 
+    the side to allow for subject straw access of practical feeding (involved three movements: moving to in front of the cup, moving forward to encapsulate cup, gripping cup),
+    started testing for holding utensils with the gripper, as simulated with a wooden stick; the stick was positioned atop the cup horizontally with the "handle" hanging off the
+    cup rim: current script allows arm to move to the handle, grip the stick, and carry it target destination</p>
+    <p>Week 4: Introduction to OpenCV, initial testing of facial recognition to succeed at recognizing facial landmarks from local laptop camera, and recognizing test bowl
+    with applied patterns to strengthen object recognition</p>
+    <p>Week 5: Continued working with OpenCV to optimize cup recognition amongst any camera scene through explicit RBG, explored other facial recognition options and 
+    acknowledged dlib and other object recognition libraries as possible workflows and toolkits</p>
+    <p>Week 6: Integrated OpenCV cup recognition to Baxter's wrist camera with visual output on lab computer to explicitly show the entire cup object being detected, considered
+    changing RGB options to HSV, plus other optimizations; started integrating Baxter's response in robot arm movement in relation to the cup detection</p>
+    <p>Week 7: Continued working with object recognition on cup with moving the robot arm: created script that allowed for user confirmation of movement direction correctness
+    when the wrist camera detects the cup, and subsequently resumed testing with Baxter's perspective of moving right, left, forward, and back when necessary</p>
+    <p>Week 8: Debugging and refinement of Baxter's movement in relation to the cup, editing the necessary angles and trigonometry-related problems with the arm angles in relation
+    to the robot's main body, fully integrated HSV recognition with other edits to improve overall cup detection, explicitly altered arm movment to steer around the cup
+    accordingly and not knock it over, integrated gripper control to grab the cup once the arm has successfully moved in range of the cup</p>
+
+    <h3>Shopping List (as of 02/20/2017)</h3>
+    <div class="list">
+      <ul>
+        <li>Utensils (spoons, forks)</li>
+        <li>Cereal (test food 1)</li>
+        <li>Bowls</li>
+        <li>Plates</li>
+        <li>Straws</li>
+        <li>Cups</li>
+        <li>Plastic wrap</li>
+        <li>Rubber bands</li>
+        <li>Paper towels</li>
+      </ul>
+    </div>
+  </body>
 </html>
