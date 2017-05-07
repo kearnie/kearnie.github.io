@@ -109,13 +109,23 @@
     <p>Week 8: Debugging and refinement of Baxter's movement in relation to the cup, editing the necessary angles and trigonometry-related problems with the arm angles in relation
     to the robot's main body, fully integrated HSV recognition with other edits to improve overall cup detection, explicitly altered arm movment to steer around the cup
     accordingly and not knock it over, integrated gripper control to grab the cup once the arm has successfully moved in range of the cup</p>
-    <p>Week 9: Fine-tuning of object recognition of distant measurement: we created a Python dictionary for real-world physical distance between Baxter's
+    <p>Week 9: Further testing of cup recognition with real-time output of Baxter's wrist camera POV in object detection. This benchmark required
+    thorough testing to ensure that with all future feeding test runs that Baxter would confidently be able to retrieve the food items at hand,
+    in this case tested through our explicit decision of it being an orange cup.</p>
+    <p>Week 10: Carnival Break!</p>
+    <p>Week 11:Fine-tuning of object recognition of distant measurement: we created a Python dictionary for real-world physical distance between Baxter's
       grippers and the cup mapped to its actual degrees and arm/wrist angles to extrapolate a graph that could be utilized for arm movement towards
-      target item to be accurate once the object is centered on Baxter's wrist camera.</p>
-    <p>Week 10:</p>
-    <p>Week 11:</p>
+      target item to be accurate once the object is centered on Baxter's wrist camera. Projected future throghput with working with facial landmark recognition,
+    and had to relocate and account for the distance differences for our next benchmark of testing, since the area behind the table on which we tested
+    object recognition had too many items and cords.</p>
     <p>Week 12: Ran final tests of object recognition and tinkered accordingly with the cup at new text location for facial landmark recognition; ensured that
-      the cup script still works with it being at a temporary location for face-testing purposes.</p>
+      the cup script still works with it being at a temporary location for face-testing purposes. Integrated and tested facial landmark recognition and was able to 
+    document cup/drink feeding task with target subject. Then proceeded to test with large spoon as utensil and cereal as first test food to successfully
+    calibrate a practical spoonful for the test, and to bring it to a subject's mouth. Edited scripts for all to prompt when Baxter recognizes that the subject's
+    mouth is opened, and this was done through a script integrated through the head camera to recognize and measure the openness of a face's mouth based
+    on the number of relatively darker pixels on the face. Lastly, implemented and test ran our script for mouth-wiping, which was done through similar
+    measurements and calibration with Baxter's arm movement (like feeding), with some dabbing and left-right movement at the subject's mouth to simulate
+    wiping action; scripted such that it prompts after a feeding run and when the head camera senses that the subject's mouth has become closed.</p>
     
     <h3>Shopping List (as of 02/20/2017)</h3>
     <div class="list">
